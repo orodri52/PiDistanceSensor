@@ -14,11 +14,20 @@ public class HardwareController {
 
     private SensorService sensorService;
 
+    /**
+     * Spring's dependency injection to the sensor component.
+     * @param sensorService
+     */
     @Autowired
     public HardwareController(SensorService sensorService) {
         this.sensorService = sensorService;
     }
 
+    /**
+     * End point mapping that will get the distance for the given sensor.
+     * @return Distance in inches.
+     * @throws InterruptedException thread exception
+     */
     @GetMapping("/distance")
     public String getDistance() throws InterruptedException {
         return this.sensorService.getDistance();
