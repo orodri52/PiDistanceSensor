@@ -20,7 +20,7 @@ public class HardwareController {
     }
 
     @GetMapping("/distance")
-    public String getTemp() throws InterruptedException {
+    public String getDistance() throws InterruptedException {
         return this.sensorService.getDistance();
 
     }
